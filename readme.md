@@ -47,6 +47,11 @@ git clone https://github.com/codewithsadee/adex.git
 
 If you want to contact with me you can reach me at [Twitter](https://www.twitter.com/codewithsadee).
 
+### Whatsapp Integration Tool Account
+
+nigan25144@modirosa.com
+4BGiLHz.2vsxaiy
+
 ### License
 
 [MIT](https://choosealicense.com/licenses/mit/)
