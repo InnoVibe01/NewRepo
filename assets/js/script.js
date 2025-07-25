@@ -1,35 +1,81 @@
 "use strict";
 
 // Form submission event listener
-document
-  .getElementById("contact-form")
-  .addEventListener("submit", function (event) {
-    event.preventDefault(); 
-    // Prevent the form from reloading the page
-    // Get the form data
+// document
+//   .getElementById("contact-form")
+//   .addEventListener("submit", function (event) {
+//     event.preventDefault();
+//     // Prevent the form from reloading the page
+//     // Get the form data
 
-    const name = document.getElementById("name").value;
-    const phone = document.getElementById("phone").value;
-    const message = document.getElementById("message").value;
+//     const name = document.getElementById("name").value;
+//     const phone = document.getElementById("phone").value;
+//     const message = document.getElementById("message").value;
 
-    // Send the email using EmailJS
-    emailjs
-      .send("service_pa8xlmn", "template_md4f0mc", {
-        // Use the correct IDs
-        name: name,
-        phone: phone,
-        message: message,
-      })
-      .then(
-        function (response) {
-          alert("Message sent successfully!");
-        },
-        function (error) {
-          console.error("Error:", error); // Log the error for debugging
-          alert("Failed to send the message. Please try again.");
-        }
-      );
+//     // Send the email using EmailJS
+//     // emailjs.send("service_pa8xlmn", "template_md4f0mc", {
+//     emailjs.send("service_mgw82w8", "template_ck3lxhv", {
+//       // Use the correct IDs
+//       name: name,
+//       phone: phone,
+//       message: message,
+//     })
+//       .then(
+//         function (response) {
+//           alert("Message sent successfully!");
+//         },
+//         function (error) {
+//           console.error("Error:", error); // Log the error for debugging
+//           alert("Failed to send the message. Please try again.");
+//         }
+//       );
+//   });
+
+// Wait until DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.getElementById("contact-form");
+  const submitBtn = document.getElementById("submit-btn");
+
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+    const honeypot = document.querySelector("input[name='website']").value.trim();
+
+    if (honeypot !== "") {
+      console.warn("Spam detected.");
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
+
+    grecaptcha.ready(function () {
+      grecaptcha.execute("6LcEko4rAAAAAHnGmA9J00paAqXXGxbsc6KgalFs", { action: "submit" }).then(function (token) {
+        emailjs.send("service_mgw82w8", "template_ck3lxhv", {
+          name: name,
+          phone: phone,
+          message: message,
+          "g-recaptcha-response": token,
+        }).then(
+          function () {
+            alert("Message sent successfully!");
+            form.reset();
+          },
+          function (error) {
+            console.error("Error:", error);
+            alert("Failed to send the message. Please try again.");
+          }
+        ).finally(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerText = "Send Message";
+        });
+      });
+    });
   });
+});
 
 // Function to close the modal
 function closeModal() {

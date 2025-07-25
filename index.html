@@ -102,10 +102,6 @@
           </li>
 
           <li>
-            <a href="#" class="navbar-link">Blog</a>
-          </li>
-
-          <li>
             <a href="#Products" class="navbar-link">Products</a>
           </li>
         </ul>
@@ -171,7 +167,10 @@
               <label for="message">Message:</label>
               <textarea id="message" name="message" rows="4" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">
+            <!-- Honeypot field (invisible to humans) -->
+            <input type="text" name="website" style="display: none;" autocomplete="off" />
+
+            <button type="submit" id="submit-btn" class="btn btn-primary">
               Send Message
             </button>
           </form>
@@ -181,13 +180,14 @@
       <script type="text/javascript">
         (function () {
           emailjs.init({
-            publicKey: "v1kw4demD14edbuOy",
+            publicKey: "PEXqSyqEkLyLkHo7T",
           });
         })();
       </script>
-
       <div class="overlay" data-nav-toggler data-overlay></div>
     </div>
+    <!-- Google reCAPTCHA -->
+    <script src="https://www.google.com/recaptcha/api.js?render=6LcEko4rAAAAAHnGmA9J00paAqXXGxbsc6KgalFs"></script>
   </header>
 
   <main>
@@ -275,7 +275,7 @@
                   brands, ensuring reliability and longevity.
                 </p>
 
-                <a href="#" class="btn-text">
+                <a href="about.html" class="btn-text">
                   <span class="span">Learn More</span>
 
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -296,7 +296,7 @@
                   control, security, and more, into one system.
                 </p>
 
-                <a href="#" class="btn-text">
+                <a href="about.html" class="btn-text">
                   <span class="span">Learn More</span>
 
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -317,7 +317,7 @@
                   performance.
                 </p>
 
-                <a href="#" class="btn-text">
+                <a href="about.html" class="btn-text">
                   <span class="span">Learn More</span>
 
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -338,7 +338,7 @@
                   are always up to date with the latest features.
                 </p>
 
-                <a href="#" class="btn-text">
+                <a href="about.html" class="btn-text">
                   <span class="span">Learn More</span>
 
                   <ion-icon name="arrow-forward-outline" aria-hidden="true"></ion-icon>
@@ -863,13 +863,9 @@
   <!-- 
     - custom js link
   -->
-  <script src="./assets/js/script.js"></script>
-
-  <!-- 
-    - ionicon
-  -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
