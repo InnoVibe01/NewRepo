@@ -2,23 +2,20 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CCTV & Intercom | Innovibe</title>
-    <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </head>
 
 <body>
-    <!-- Header -->
     <header class="header active" data-header>
         <div class="container">
             <a href="index.html" class="logo">
-                <img src="./assets/images/724a822b-420a-4638-a18b-05589d91b68c.png" width="174" height="24"
-                    alt="Innovibe logo" class="logo-dark" />
+                <img src="./assets/images/logo-dark.svg" width="174" height="24" alt="Innovibe logo"
+                    class="logo-dark" />
             </a>
 
             <nav class="navbar">
@@ -34,90 +31,92 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="section hero" style="padding-top: 100px; text-align: center;">
-        <div class="container">
-            <h1 class="h1">CCTV & Intercom Solutions</h1>
-            <p class="section-subtitle">Secure Your Space with Smart Surveillance</p>
-            <img src="./assets/images/cctv-hero.jpg" alt="CCTV and Intercom"
-                style="max-width: 100%; border-radius: 16px; margin-top: 20px;">
-        </div>
-    </section>
+    <main>
+        <section class="section service" style="padding-top: 120px;">
+            <div class="container">
+                <p class="section-subtitle">Our Smart Security Devices</p>
+                <h2 class="h2 section-title">CCTV & Intercom Solutions</h2>
 
-    <!-- Product Section -->
-    <section class="section" style="padding-top: 60px;">
-        <div class="container">
-            <div class="grid-list">
-
-                <!-- Direct Power Camera -->
-                <div class="service-card">
-                    <div class="card-icon icon-circle">
-                        <ion-icon name="flash-outline"></ion-icon>
+                <div class="grid-list">
+                    <div class="service-card" onclick="openPopup('direct')">
+                        <div class="card-icon">
+                            <ion-icon name="videocam"></ion-icon>
+                        </div>
+                        <h3 class="h4 card-title">Direct Power Cameras</h3>
                     </div>
-                    <h3 class="h4 card-title">Direct Power Camera</h3>
-                    <p class="card-text">A reliable wired camera solution that ensures 24/7 surveillance without
-                        dependency on battery or solar.</p>
-                </div>
 
-                <!-- Solar Panel Camera -->
-                <div class="service-card">
-                    <div class="card-icon icon-circle">
-                        <ion-icon name="sunny-outline"></ion-icon>
+                    <div class="service-card" onclick="openPopup('solar')">
+                        <div class="card-icon">
+                            <ion-icon name="sunny"></ion-icon>
+                        </div>
+                        <h3 class="h4 card-title">Solar Panel Cameras</h3>
                     </div>
-                    <h3 class="h4 card-title">Solar Panel Camera</h3>
-                    <p class="card-text">An eco-friendly wireless camera powered by solar energy, ideal for outdoor
-                        installations.</p>
-                </div>
 
-                <!-- POE Camera -->
-                <div class="service-card">
-                    <div class="card-icon icon-circle">
-                        <ion-icon name="link-outline"></ion-icon>
+                    <div class="service-card" onclick="openPopup('poe')">
+                        <div class="card-icon">
+                            <ion-icon name="flash"></ion-icon>
+                        </div>
+                        <h3 class="h4 card-title">PoE Cameras</h3>
                     </div>
-                    <h3 class="h4 card-title">PoE Camera</h3>
-                    <p class="card-text">Power over Ethernet (PoE) camera offering a single cable solution for both
-                        power and data.</p>
-                </div>
 
-                <!-- Intercom Systems -->
-                <div class="service-card">
-                    <div class="card-icon icon-circle">
-                        <ion-icon name="call-outline"></ion-icon>
+                    <div class="service-card" onclick="openPopup('intercom')">
+                        <div class="card-icon">
+                            <ion-icon name="call"></ion-icon>
+                        </div>
+                        <h3 class="h4 card-title">Smart Intercoms</h3>
                     </div>
-                    <h3 class="h4 card-title">Smart Intercom</h3>
-                    <p class="card-text">Two-way communication with door control. Compatible with mobile notifications
-                        and visitor logs.</p>
                 </div>
+            </div>
+        </section>
 
-                <!-- Brand Info -->
-                <div class="service-card" style="grid-column: span 2;">
-                    <div class="card-icon icon-circle">
-                        <ion-icon name="pricetags-outline"></ion-icon>
-                    </div>
-                    <h3 class="h4 card-title">Compatible with Tuya & Smart Life</h3>
-                    <p class="card-text">Our surveillance systems integrate seamlessly with both <strong>Tuya</strong>
-                        and <strong>Smart Life</strong> platforms, allowing remote control, scheduling, and smart alerts
-                        from your phone.</p>
-                </div>
-
+        <!-- Popup Modal -->
+        <div class="popup" id="popup">
+            <div class="popup-content">
+                <button onclick="closePopup()"
+                    style="float:right; background:none; border:none; font-size:20px">×</button>
+                <h3 id="popup-title"></h3>
+                <div class="popup-grid" id="popup-body"></div>
             </div>
         </div>
-    </section>
+    </main>
 
     <footer class="footer">
         <div class="container grid-list">
             <div class="footer-brand">
                 <a href="#" class="logo">
-                    <img src="./assets/images/724a822b-420a-4638-a18b-05589d91b68c.png" width="174" height="54"
-                        alt="Innovibe home" />
+                    <img src="./assets/images/logo-light.svg" width="174" height="54" alt="Innovibe home" />
                 </a>
                 <br />
                 <ul class="social-list">
-                    <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
-                    <li><a href="#" class="social-link"><ion-icon name="logo-twitter"></ion-icon></a></li>
-                    <li><a href="#" class="social-link"><ion-icon name="logo-dribbble"></ion-icon></a></li>
-                    <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
-                    <li><a href="#" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-dribbble"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </a>
+                    </li>
                 </ul>
             </div>
 
@@ -125,38 +124,74 @@
                 <li>
                     <p class="h4 footer-list-title">Get in Touch</p>
                 </li>
+
                 <li>
-                    <address class="footer-text">INNOVIBE SMART MACHINES TRADING</address>
+                    <address class="footer-text">
+                        INNOVIBE SMART MACHINES TRADING
+                    </address>
                 </li>
-                <li><a href="mailto:karim.husri@innovibe.app" class="footer-link">karim.husri@innovibe.app</a></li>
-                <li><a href="tel:00971561884488" class="footer-link">+971 56 188 4488</a></li>
+
+                <li>
+                    <a href="mailto:karim.husri@innovibe.app" class="footer-link">karim.husri@innovibe.app</a>
+                </li>
+
+                <li>
+                    <a href="tel:00971561884488" class="footer-link">+971 56 188 4488</a>
+                </li>
             </ul>
 
             <ul class="footer-list">
                 <li>
                     <p class="h4 footer-list-title">Learn More</p>
                 </li>
-                <li><a href="#" class="footer-link">About Us</a></li>
-                <li><a href="#" class="footer-link">Our Story</a></li>
-                <li><a href="#" class="footer-link">Projects</a></li>
-                <li><a href="#" class="footer-link">Terms of Use</a></li>
-                <li><a href="#" class="footer-link">Privacy Policy</a></li>
+
+                <li>
+                    <a href="#" class="footer-link">About Us</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Our Story</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Projects</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Terms of Use</a>
+                </li>
+
+                <li>
+                    <a href="#" class="footer-link">Privacy Policy</a>
+                </li>
             </ul>
 
             <div class="footer-list">
                 <p class="h4 footer-list-title">Our Newsletter</p>
-                <p class="footer-text">Subscribe to our newsletter to get our news & deals delivered to you.</p>
+
+                <p class="footer-text">
+                    Subscribe to our newsletter to get our news & deals delivered to
+                    you.
+                </p>
+
                 <form action="" class="input-wrapper">
                     <input type="email" name="email_address" placeholder="Email Address" required class="input-field" />
+
                     <button type="submit" class="submit-btn">Join</button>
                 </form>
             </div>
         </div>
+        <!-- Elfsight WhatsApp Chat | Untitled WhatsApp Chat -->
+        <!-- <script src="https://static.elfsight.com/platform/platform.js" async></script>
+    <div class="elfsight-app-5cc184ad-d285-4e29-ae1f-bc62fa2b2af0" data-elfsight-app-lazy></div> -->
+        <script src="https://static.elfsight.com/platform/platform.js" async></script>
+        <div class="elfsight-app-40f2349b-13cf-4f42-b601-b6092d7c5bad" data-elfsight-app-lazy></div>
     </footer>
 
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/products.js"></script>
 </body>
 
 </html>
