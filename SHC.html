@@ -8,27 +8,160 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap" rel="stylesheet" />
     <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Innovibe",
+        "image": "https://www.innovibe.app/assets/images/logo-light.png",
+        "@id": "https://www.innovibe.app",
+        "url": "https://www.innovibe.app",
+        "telephone": "+971 56 188 4488",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Al Quoz Industrial Area 4, street 16b main warehouse 6",
+          "addressLocality": "Dubai",
+          "addressRegion": "DU",
+          "postalCode": "12345",
+          "addressCountry": "AE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 25.276987,
+          "longitude": 55.296249
+        },
+        "sameAs": [
+          "https://www.facebook.com/innovibe",
+          "https://www.linkedin.com/company/innovibe",
+          "https://www.instagram.com/innovibe"
+        ]
+      }
+    </script>
 </head>
 
 <body>
-    <header class="header active" data-header>
+    <header class="header" data-header>
         <div class="container">
-            <a href="index.html" class="logo">
-                <img src="./assets/images/logo-dark.svg" width="174" height="24" alt="Innovibe logo"
+            <a href="#" class="logo">
+                <img src="./assets/images/logo-light.png" width="174" height="24" alt="Innovibe home"
+                    class="logo-light" />
+
+                <img src="./assets/images/logo-dark.svg" width="174" height="24" alt="Innovibe home"
                     class="logo-dark" />
             </a>
 
-            <nav class="navbar">
+            <nav class="navbar" data-navbar>
+                <div class="navbar-top">
+                    <a href="#" class="logo">
+                        <img src="./assets/images/logo-light.svg" width="74" height="24" alt="Innovibe home" />
+                    </a>
+
+                    <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+                        <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+                    </button>
+                </div>
+
                 <ul class="navbar-list">
-                    <li><a href="index.html" class="navbar-link">Home</a></li>
-                    <li><a href="index.html#About" class="navbar-link">About</a></li>
-                    <li><a href="index.html#Services" class="navbar-link">Services</a></li>
-                    <li><a href="index.html#Products" class="navbar-link">Products</a></li>
+                    <li>
+                        <a href="#" class="navbar-link">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#About" class="navbar-link">About</a>
+                    </li>
+
+                    <li>
+                        <a href="#Services" class="navbar-link">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="#Products" class="navbar-link">Products</a>
+                    </li>
+                </ul>
+
+                <div class="wrapper">
+                    <a href="karim.husri@innovibe.app" class="contact-link">karim.husri@innovibe.app</a>
+
+                    <a href="tel:00971561884488" class="contact-link">+971 56 188 4488</a>
+                </div>
+
+                <ul class="social-list">
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-dribbble"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#" class="social-link">
+                            <ion-icon name="logo-youtube"></ion-icon>
+                        </a>
+                    </li>
                 </ul>
             </nav>
 
-            <a href="#contact-modal" class="btn btn-primary">Contact Us</a>
+            <a href="#" class="btn btn-primary">Contact Us</a>
+
+            <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+                <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
+            </button>
+            <div id="contact-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn" onclick="closeModal()">&times;</span>
+                    <h2>Contact Us</h2>
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="name" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message:</label>
+                            <textarea id="message" name="message" rows="4" required></textarea>
+                        </div>
+                        <!-- Honeypot field (invisible to humans) -->
+                        <input type="text" name="website" style="display: none;" autocomplete="off" />
+
+                        <button type="submit" id="submit-btn" class="btn btn-primary">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <script type="text/javascript"
+                src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+            <script type="text/javascript">
+                (function () {
+                    emailjs.init({
+                        publicKey: "PEXqSyqEkLyLkHo7T",
+                    });
+                })();
+            </script>
+            <div class="overlay" data-nav-toggler data-overlay></div>
         </div>
+        <!-- Google reCAPTCHA -->
+        <script src="https://www.google.com/recaptcha/api.js?render=6LcEko4rAAAAAHnGmA9J00paAqXXGxbsc6KgalFs"></script>
     </header>
 
     <main>
