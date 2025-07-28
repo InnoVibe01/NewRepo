@@ -63,7 +63,26 @@ function openPopup(category) {
                 { src: "./assets/images/smart home control/Gateway/T-G-R.png", label: "Router Gateway – T Series" },
                 { src: "./assets/images/smart home control/Gateway/S-S.png", label: "Smart Station – LS Series" }
             ]
-        }
+        },
+        hvac_control: {
+            title: "HVAC Control Units",
+            images: [
+                { src: "./assets/images/hvac/T-C.png", label: "Outdoor Control Unit – T Series" },
+                { src: "./assets/images/hvac/LS-C.png", label: "Outdoor Control Unit – LS Series" },
+                { src: "./assets/images/hvac/T-LS-C.png", label: "Indoor Control Unit – T & LS Series" }
+            ]
+        },
+        thermostat: {
+            title: "Smart Thermostats",
+            images: [
+                { src: "./assets/images/hvac/T-01.png", label: "FCU Thermostat – T Series" },
+                { src: "./assets/images/hvac/T-02.png", label: "FCU Thermostat – T Series" },
+                { src: "./assets/images/hvac/T-03.png", label: "FCU Thermostat – T Series" },
+                { src: "./assets/images/hvac/T-04.png", label: "FCU Thermostat – T Series" },
+                { src: "./assets/images/hvac/T-05.png", label: "FCU Thermostat – T Series" },
+                { src: "./assets/images/hvac/LS-01.png", label: "FCU Thermostat – LS Series" }
+            ]
+        },
     };
 
     const selected = data[category];
