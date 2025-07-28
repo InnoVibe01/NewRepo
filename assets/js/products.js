@@ -104,6 +104,26 @@ function openPopup(category) {
                 { src: "./assets/images/curtain/LS-C-C.png", label: "Curtain Control Unit – LS Series" }
             ]
         },
+        door: {
+            title: "Smart Door Lock",
+            images: [
+                { src: "./assets/images/door/T-01.png", label: "Door Lock – T Series" },
+                { src: "./assets/images/door/T-02.png", label: "Door Lock – T Series" },
+                { src: "./assets/images/door/T-03.png", label: "Door Lock – T Series" },
+                { src: "./assets/images/door/T-04.png", label: "Door Lock – T Series" },
+                { src: "./assets/images/door/LS-01.png", label: "Door Lock – LS Series" },
+                { src: "./assets/images/door/LS-02.png", label: "Door Lock – LS Series" }
+            ]
+        },
+        garage: {
+            title: "Garage Control",
+            images: [
+                { src: "./assets/images/door/T-G-01.png", label: "Garage Control Unit – T Series" },
+                { src: "./assets/images/door/T-G-03.png", label: "Garage Motor Unit – T Series" },
+                { src: "./assets/images/door/T-G-02.png", label: "Garage Arm Motor Unit – T Series" },
+                { src: "./assets/images/door/LS-G.png", label: "Garage Control Unit – LS Series" }
+            ]
+        },
     };
 
     const selected = data[category];
