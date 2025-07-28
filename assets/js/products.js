@@ -83,6 +83,27 @@ function openPopup(category) {
                 { src: "./assets/images/hvac/LS-01.png", label: "FCU Thermostat – LS Series" }
             ]
         },
+        curtain: {
+            title: "Smart Curtain",
+            images: [
+                { src: "./assets/images/curtain/T-C.png", label: "Curtain Unit – T Series" },
+                { src: "./assets/images/curtain/LS-C.png", label: "Curtain Unit – LS Series" }
+            ]
+        },
+        blind: {
+            title: "Smart Blind",
+            images: [
+                { src: "./assets/images/curtain/T-B.png", label: "Blind Unit – T Series" },
+                { src: "./assets/images/curtain/LS-B.png", label: "Blind Unit – LS Series" }
+            ]
+        },
+        curtain_control: {
+            title: "Curtain Control",
+            images: [
+                { src: "./assets/images/curtain/T-C-C.png", label: "Curtain Control Unit – T Series" },
+                { src: "./assets/images/curtain/LS-C-C.png", label: "Curtain Control Unit – LS Series" }
+            ]
+        },
     };
 
     const selected = data[category];
