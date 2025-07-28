@@ -40,19 +40,18 @@
 </head>
 
 <body>
-    <header class="header" data-header>
+    <header class="header active" data-header>
         <div class="container">
-            <a href="#" class="logo">
+            <a href="index.html" class="logo">
                 <img src="./assets/images/logo-light.png" width="174" height="24" alt="Innovibe home"
                     class="logo-light" />
 
                 <img src="./assets/images/logo-dark.svg" width="174" height="24" alt="Innovibe home"
                     class="logo-dark" />
             </a>
-
             <nav class="navbar" data-navbar>
                 <div class="navbar-top">
-                    <a href="#" class="logo">
+                    <a href="index.html" class="logo">
                         <img src="./assets/images/logo-light.svg" width="74" height="24" alt="Innovibe home" />
                     </a>
 
@@ -63,19 +62,19 @@
 
                 <ul class="navbar-list">
                     <li>
-                        <a href="#" class="navbar-link">Home</a>
+                        <a href="index.html" class="navbar-link">Home</a>
                     </li>
 
                     <li>
-                        <a href="#About" class="navbar-link">About</a>
+                        <a href="index.html#About" class="navbar-link">About</a>
                     </li>
 
                     <li>
-                        <a href="#Services" class="navbar-link">Services</a>
+                        <a href="index.html#Services" class="navbar-link">Services</a>
                     </li>
 
                     <li>
-                        <a href="#Products" class="navbar-link">Products</a>
+                        <a href="index.html#Products" class="navbar-link">Products</a>
                     </li>
                 </ul>
 
@@ -118,7 +117,7 @@
                 </ul>
             </nav>
 
-            <a href="#" class="btn btn-primary">Contact Us</a>
+            <a href="index.html" class="btn btn-outline" id="hero-contact-btn">Contact Us</a>
 
             <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
                 <ion-icon name="menu-outline" aria-hidden="true"></ion-icon>
@@ -140,6 +139,7 @@
                             <label for="message">Message:</label>
                             <textarea id="message" name="message" rows="4" required></textarea>
                         </div>
+
                         <!-- Honeypot field (invisible to humans) -->
                         <input type="text" name="website" style="display: none;" autocomplete="off" />
 
