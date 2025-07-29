@@ -124,6 +124,52 @@ function openPopup(category) {
                 { src: "./assets/images/door/LS-G.png", label: "Garage Control Unit – LS Series" }
             ]
         },
+        switch: {
+            title: "Switch Control",
+            images: [
+                { src: "./assets/images/switch/T-01.png", label: "1 Gang Glass Switch – T Series" },
+                { src: "./assets/images/switch/T-02.png", label: "2 Gang Glass Switch – T Series" },
+                { src: "./assets/images/switch/T-03.png", label: "3 Gang Glass Switch – T Series" },
+                { src: "./assets/images/switch/T-04.png", label: "4 Gang Glass Switch – T Series" },
+                { src: "./assets/images/switch/T-05.png", label: "1 Gang Button Switch – T Series" },
+                { src: "./assets/images/switch/T-06.png", label: "2 Gang Button Switch – T Series" },
+                { src: "./assets/images/switch/T-07.png", label: "3 Gang Button Switch – T Series" },
+                { src: "./assets/images/switch/T-D.png", label: "Dimmer Control Unit – T Series" },
+                { src: "./assets/images/switch/LS-01.png", label: "BLEND Switch PRO (Metal) – LS Series" },
+                { src: "./assets/images/switch/LS-02.png", label: "Nature Switch – LS Series" },
+                { src: "./assets/images/switch/LS-03.png", label: "BLEND Switch PRO – LS Series" },
+                { src: "./assets/images/switch/LS-04.png", label: "Smart Switch Air (8 Key 4 way White) – LS Series" },
+                { src: "./assets/images/switch/LS-05.png", label: "Starry Switch – LS Series" },
+                { src: "./assets/images/switch/LS-06.png", label: "BLEND Smart Switch – LS Series" },
+                { src: "./assets/images/switch/LS-07.png", label: "Moonstone Switch 120 – LS Series" },
+                { src: "./assets/images/switch/LS-D.png", label: "Dimmer Control Unit – LS Series" }
+            ]
+        },
+        channel: {
+            title: "Channel Control",
+            images: [
+                { src: "./assets/images/switch/T-C-D.png", label: "Dimmer Channel Control Unit – T Series" },
+                { src: "./assets/images/switch/LS-C-01.png", label: "Channel Control Unit – LS Series" },
+                { src: "./assets/images/switch/LS-CD-02.png", label: "DimmerChannel Control Unit – LS Series" }
+            ]
+        },
+        socket: {
+            title: "Socket Control & Plug",
+            images: [
+                { src: "./assets/images/switch/T-S-02.png", label: "1 Gang Socket – T Series" },
+                { src: "./assets/images/switch/T-S-01.png", label: "2 Gang Socket – T Series" },
+                { src: "./assets/images/switch/T-S-P.png", label: "Smart Plug – T Series" },
+                { src: "./assets/images/switch/LS-S-P.png", label: "Smart Plug – LS Series" },
+                { src: "./assets/images/switch/T-S-S.png", label: "Power Strip – T Series" }
+            ]
+        },
+        water: {
+            title: "Water Heater Control",
+            images: [
+                { src: "./assets/images/switch/T-W.png", label: "Water Heater Control Unit – T Series" },
+                { src: "./assets/images/switch/LS-W.png", label: "Water Heater Control Unit – LS Series" }
+            ]
+        },
     };
 
     const selected = data[category];
