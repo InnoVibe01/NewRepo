@@ -170,6 +170,19 @@ function openPopup(category) {
                 { src: "./assets/images/switch/LS-W.png", label: "Water Heater Control Unit – LS Series" }
             ]
         },
+        human: {
+            title: "Human Devices",
+            images: [
+                { src: "./assets/images/pets/T-H.png", label: "WiFi Smart Air Purifier – T Series" }
+            ]
+        },
+        pet: {
+            title: "Pets Devices",
+            images: [
+                { src: "./assets/images/pets/T-P-01.png", label: "Smart Pet Food Feeder – T Series" },
+                { src: "./assets/images/pets/T-P-02.png", label: "Smart Pet Water Fountain – T Series" }
+            ]
+        }
     };
 
     const selected = data[category];
