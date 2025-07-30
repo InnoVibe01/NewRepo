@@ -182,6 +182,29 @@ function openPopup(category) {
                 { src: "./assets/images/pets/T-P-01.png", label: "Smart Pet Food Feeder – T Series" },
                 { src: "./assets/images/pets/T-P-02.png", label: "Smart Pet Water Fountain – T Series" }
             ]
+        },
+        t_series: {
+            title: "T Series Sensors",
+            images: [
+                { src: "./assets/images/sensor/T-D.png", label: "Door Sensor – T Series" },
+                { src: "./assets/images/sensor/T-V.png", label: "Vibration Sensor – T Series" },
+                { src: "./assets/images/sensor/T-G.png", label: "Gaz Sensor – T Series" },
+                { src: "./assets/images/sensor/T-S.png", label: "Siren/Alarm Sensor – T Series" },
+                { src: "./assets/images/sensor/T-SM.png", label: "Smoke Sensor – T Series" },
+                { src: "./assets/images/sensor/T-M.png", label: "Human Sensor – T Series" },
+                { src: "./assets/images/sensor/T-P.png", label: "Motion Sensor – T Series" }
+            ]
+        },
+        ls_series: {
+            title: "LS Series Sensors",
+            images: [
+                { src: "./assets/images/sensor/LS-D.png", label: "Door Sensor – LS Series" },
+                { src: "./assets/images/sensor/LS-TH.png", label: "Temperature and Humidity Sensor – LS Series" },
+                { src: "./assets/images/sensor/LS-G.png", label: "Gaz Sensor – LS Series" },
+                { src: "./assets/images/sensor/LS-S.png", label: "Siren/Alarm Sensor – LS Series" },
+                { src: "./assets/images/sensor/LS-W.png", label: "Water Leak Sensor – LS Series" },
+                { src: "./assets/images/sensor/LS-M.png", label: "Motion Sensor – LS Series" }
+            ]
         }
     };
 
