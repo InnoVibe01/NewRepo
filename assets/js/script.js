@@ -80,25 +80,36 @@ document.addEventListener("DOMContentLoaded", function () {
 // Function to close the modal
 function closeModal() {
   document.getElementById("contact-modal").style.display = "none";
+  document.body.style.overflow = "auto"; // Re-enable scrolling
+}
+
+// Function to open the modal
+function openModal() {
+  const modal = document.getElementById("contact-modal");
+  modal.style.display = "block";
+  document.body.style.overflow = "hidden"; // Prevent background scrolling
+  modal.scrollTop = 0; // Ensure modal content is at top
 }
 
 // Modal opening function remains the same
 const contactUsBtn = document.querySelector(".btn-primary");
 const modal = document.getElementById("contact-modal");
 const heroContactBtn = document.getElementById("hero-contact-btn");
+
 heroContactBtn.addEventListener("click", function (e) {
   e.preventDefault(); // Prevent default anchor behavior
-  modal.style.display = "block"; // Show the modal
+  openModal(); // Show the modal
 });
+
 contactUsBtn.addEventListener("click", function (e) {
   e.preventDefault();
-  modal.style.display = "block";
+  openModal();
 });
 
 // Close modal if user clicks outside the modal content
 window.onclick = function (event) {
   if (event.target == modal) {
-    modal.style.display = "none";
+    closeModal();
   }
 };
 /**
@@ -134,13 +145,32 @@ addEventOnElements(navTogglers, "click", toggleNavbar);
 
 const header = document.querySelector("[data-header]");
 
+// Check if we're on the homepage (index.html) or other pages
+const isHomePage = window.location.pathname === '/' ||
+  window.location.pathname === '/index.html' ||
+  window.location.pathname.endsWith('index.html') ||
+  window.location.pathname === '';
+
 window.addEventListener("scroll", function () {
   if (window.scrollY > 100) {
     header.classList.add("active");
   } else {
-    header.classList.remove("active");
+    // Only remove active class on homepage, keep it on other pages
+    if (isHomePage) {
+      header.classList.remove("active");
+    }
   }
 });
+
+// For non-homepage pages, ensure header starts with active class
+if (!isHomePage) {
+  header.classList.add("active");
+} else {
+  // For homepage, check if we're already scrolled down
+  if (window.scrollY > 100) {
+    header.classList.add("active");
+  }
+}
 
 /**
  * SLIDER

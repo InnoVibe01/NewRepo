@@ -312,6 +312,30 @@ body.nav-active {
   animation: slideIn 0.5s ease forwards;
 }
 
+/* Ensure navbar elements are visible on non-homepage pages */
+.header.active .navbar-link {
+  color: var(--charcoal);
+}
+
+.header.active .navbar-link:is(:hover, :focus-visible) {
+  opacity: 1;
+  color: var(--violet-blue-crayola);
+}
+
+.header.active .nav-open-btn {
+  color: var(--charcoal);
+}
+
+.header.active .btn {
+  color: var(--charcoal);
+  border-color: var(--charcoal);
+}
+
+.header.active .btn:hover {
+  background-color: var(--charcoal);
+  color: var(--white);
+}
+
 @keyframes slideIn {
   0% {
     transform: translateY(-100%);
@@ -342,10 +366,6 @@ body.nav-active {
 .nav-open-btn {
   font-size: 3.5rem;
   color: var(--white);
-}
-
-.header.active .nav-open-btn {
-  color: var(--charcoal);
 }
 
 .navbar {
@@ -1071,14 +1091,7 @@ body.nav-active {
     opacity: 0.7;
   }
 
-  .header.active .navbar-link {
-    color: var(--charcoal);
-  }
 
-  .header.active .navbar-link:is(:hover, :focus-visible) {
-    opacity: 1;
-    color: var(--violet-blue-crayola);
-  }
 
   .header .btn {
     margin-inline-start: 0;
@@ -1167,24 +1180,32 @@ body.nav-active {
 .modal {
   display: none;
   position: fixed;
-  z-index: 1;
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.4);
+  -webkit-overflow-scrolling: touch;
+  /* Smooth scrolling on iOS */
 }
 
 /* Modal content box */
 .modal-content {
   background-color: #fff;
-  margin: 10% auto;
+  margin: 5vh auto;
   padding: 20px;
   border: 1px solid #888;
   width: 90%;
   max-width: 500px;
   border-radius: 8px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  transform: translateY(0);
+  /* Ensure proper positioning */
 }
 
 /* Close button */
@@ -1209,22 +1230,69 @@ body.nav-active {
 .form-group label {
   display: block;
   margin-bottom: 5px;
+  font-weight: 600;
+  color: var(--charcoal);
 }
 
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   box-sizing: border-box;
   border: 1px solid #ddd;
   border-radius: 4px;
+  font-size: 16px;
+  /* Prevents zoom on iOS */
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .modal-content {
     width: 95%;
+    margin: 10vh auto;
+    padding: 15px;
   }
+}
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 98%;
+    margin: 5vh auto;
+    padding: 12px;
+  }
+
+  .modal .btn {
+    padding: 14px 20px;
+    font-size: 16px;
+  }
+}
+
+
+
+/* Ensure modal buttons are visible and properly styled */
+.modal .btn {
+  display: inline-block !important;
+  width: 100%;
+  max-width: none;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.modal .btn-primary {
+  background-color: var(--violet-blue-crayola);
+  color: var(--white);
+  border-color: var(--violet-blue-crayola);
+}
+
+.modal .btn-primary:hover {
+  background-color: var(--charcoal);
+  border-color: var(--charcoal);
+  color: var(--white);
 }
 
 
